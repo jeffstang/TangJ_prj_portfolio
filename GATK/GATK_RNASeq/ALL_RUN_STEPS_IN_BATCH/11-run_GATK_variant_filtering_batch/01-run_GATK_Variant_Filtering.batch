@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat ./results/rnaseq_variants/results/sample_ids.txt | parallel --plain --jobs 5 --resume-failed --joblog /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/00-run_logs/10-VCF_FILTRATION.log 'bash /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/scripts/11-GATK_VARIANT_FILTRATION.sh /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/07-GATK/03-VCF_AND_FILTRATION/{}/{}.vcf /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/07-GATK/03-VCF_AND_FILTRATION/{}/{}_filtered.vcf'
+

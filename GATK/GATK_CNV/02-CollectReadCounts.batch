@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cat /home/jtang/DLBCL_LY17/LY17_plasmaExSamples.txt | parallel \
+--plain --jobs 3 --resume-failed --joblog /home/jtang/DLBCL_LY17/scripts/GATK_CNV/JOB_LOG-PLASMAEX \
+'bash /home/jtang/scripts/GATK_CNV/02-CollectReadCounts.sh \
+/projects/rmorin/projects/DLBCL_ly17/plasma/AddReplaceRG/plasmaEx/{}*.bam \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/02-ReadCounts/plasmaEx_readCounts/{}.counts.hdf5'

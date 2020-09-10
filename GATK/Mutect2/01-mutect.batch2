@@ -1,0 +1,6 @@
+cat /home/jtang/DLBCL_LY17/data/normals/OZM_normals.txt | parallel \
+--plain --jobs 3 --resume-failed --joblog /home/jtang/DLBCL_LY17/data/normals/PON_JOBLOG_OZM.txt \
+'bash /home/jtang/scripts/GATK/Mutect2/01-mutect2.sh \
+/projects/rmorin/projects/DLBCL_OZM/Data/Picard/MarkDuplicates/02-AddRepRG/{}*.markDupl.bam \
+{} \
+/home/jtang/DLBCL_LY17/data/normals/OZM/{}.vcf.gz'

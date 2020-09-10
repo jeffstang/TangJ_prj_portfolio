@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cat /home/jtang/DLBCL_LY17/LY17_plasmaExSamples.txt | parallel \
+--plain --jobs 2 --resume-failed --joblog /home/jtang/DLBCL_LY17/scripts/GATK_CNV/JOB_LOG-08-CALL_SEGMENTS \
+'bash /home/jtang/scripts/GATK_CNV/08-CallCopyRatioSegments.sh \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/07-ModelSegments/{}*.cr.seg \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/08-CallCopyRatioSegments/{}.called.seg'
+
+

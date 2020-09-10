@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat /home/jtang/DLBCL_LY17/data/normals/list_of_normals.txt | parallel \
+--plain --jobs 5 --resume-failed --joblog /home/jtang/DLBCL_LY17/data/normals/PON_JOBLOG.txt \
+'bash /home/jtang/scripts/GATK/Mutect2/01-mutect2.sh \
+/projects/rmorin/projects/DLBCL_ly17/FFPE/Picard/MarkDuplicates/{}*.markDupl.bam \
+{} \
+/home/jtang/DLBCL_LY17/data/normals/LY17/{}.vcf.gz'

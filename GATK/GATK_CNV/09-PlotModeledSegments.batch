@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cat /home/jtang/DLBCL_LY17/LY17_plasmaExSamples.txt | parallel \
+--plain --jobs 2 --resume-failed --joblog /home/jtang/DLBCL_LY17/scripts/GATK_CNV/JOB_LOG-09-PLOT_MODELED_SEGS \
+'bash /home/jtang/scripts/GATK_CNV/09-PlotModeledSegments.sh \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/04-DenoiseReadCounts/denoised_CR/{}*.tsv \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/07-ModelSegments/{}*.modelFinal.seg \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/09-PlotModeledSegments \
+{}'
+

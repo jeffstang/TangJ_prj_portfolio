@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# PATHS
+SAMPLE_IDS=/projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/sample_ids.txt
+VCF2MAF_SHELL_SCRIPT=/projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/scripts/13-TASK_VCF2MAF.sh
+INPUT_VCF=/projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/07-GATK/03-VCF_AND_FILTRATION/{}/{}_filtered_for_no_RS_and_PASS.vcf 
+OUTPUT_MAF=/projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/08-MAF_FILES/{}/{}.maf
+TUMOUR_ID={}
+
+cat "$SAMPLE_IDS" | parallel --plain --jobs 7 "bash $VCF2MAF_SHELL_SCRIPT $INPUT_VCF $OUTPUT_MAF $TUMOUR_ID"   
+

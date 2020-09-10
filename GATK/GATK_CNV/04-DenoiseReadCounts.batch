@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cat /home/jtang/DLBCL_LY17/LY17_plasmaExSamples.txt | parallel \
+--plain --jobs 2 --resume-failed --joblog /home/jtang/DLBCL_LY17/scripts/GATK_CNV/JOB_LOG-DENOISE_CASE_COUNTS \
+'bash /home/jtang/scripts/GATK_CNV/04-DenoiseReadCounts.sh \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/02-ReadCounts/plasmaEx_readCounts/{}.counts.hdf5 \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/04-DenoiseReadCounts/standardized_CR/{}.standardizedCR.tsv \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/04-DenoiseReadCounts/denoised_CR/{}.denoisedCR.tsv'
+

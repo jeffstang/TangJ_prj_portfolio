@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/sample_ids.txt | parallel --plain --jobs 30 'bash /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/scripts/12-VARIANTS_FILT_PASSED_NO_RS.sh /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/07-GATK/03-VCF_AND_FILTRATION/{}/{}_filtered.vcf /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/07-GATK/03-VCF_AND_FILTRATION/{}/{}_filtered_for_no_RS_and_PASS.vcf'
+ 

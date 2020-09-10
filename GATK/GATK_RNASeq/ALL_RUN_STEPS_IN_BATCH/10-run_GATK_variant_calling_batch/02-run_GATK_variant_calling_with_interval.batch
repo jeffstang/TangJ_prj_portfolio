@@ -1,0 +1,3 @@
+#!/bin/bash
+head -n 2 ./results/rnaseq_variants/results/sample_ids.txt | tail -n 1 | parallel --plain --jobs 1 --resume-failed --joblog /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/00-run_logs/08-VARIANT_CALLING_with_intervals.log 'bash /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/scripts/10-GATK_VARIANT_CALLING_include_interval.sh /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/07-GATK/01-SPLIT_N_TRIM/{}/SPLIT_REASSIGN_MQ.bam /projects/nhl_meta_analysis_scratch/projects/NCI_Burkitts/results/rnaseq_variants/results/07-GATK/03-VCF_AND_FILTRATION/{}/{}_withInterval.vcf'
+

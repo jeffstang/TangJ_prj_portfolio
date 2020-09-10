@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cat /home/jtang/DLBCL_LY17/data/normals/OZM_normals.txt | parallel \
+--plain --jobs 10 \
+'bash /home/jtang/scripts/GATK/Mutect2/00-addrepRG.sh \
+/projects/rmorin/projects/DLBCL_OZM/Data/Picard/MarkDuplicates/01-MarkDuplicates/{}.markDup.bam \
+/projects/rmorin/projects/DLBCL_OZM/Data/Picard/MarkDuplicates/02-AddRepRG/{}.addrepRG.markDupl.bam \
+{}'
+

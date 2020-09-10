@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat /home/jtang/DLBCL_LY17/GATK_CNV_filePathNormals.txt | parallel \
+--plain --jobs 3 --resume-failed --joblog /home/jtang/DLBCL_LY17/scripts/GATK_CNV/JOB_LOG-PanelOfNormals \
+'bash /home/jtang/scripts/GATK_CNV/03-CreateReadCountPoN.sh \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/02-ReadCounts/normals_for_pon/{}.counts.hdf5 \
+/home/jtang/DLBCL_LY17/data/GATK_CNV/03-CreatePanelOfNormals/LY17_pon.hdf5'
+

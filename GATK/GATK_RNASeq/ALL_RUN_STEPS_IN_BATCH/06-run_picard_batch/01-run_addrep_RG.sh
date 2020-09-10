@@ -1,0 +1,2 @@
+#!/bin/bash
+cat ./results/rnaseq_variants/results/sample_ids.txt | parallel --plain --jobs 5 --resume-failed --joblog ./results/rnaseq_variants/results/logs/03-PICARD_ADDREP_RG_log.txt 'bash ./results/rnaseq_variants/scripts/06-TASK_PICARD_ADDREP_RG.sh ./results/rnaseq_variants/results/05_STAR_SECOND_PASS/{}/Aligned.sortedByCoord.out.bam ./results/rnaseq_variants/results/06-PICARD_ADDREPRG_SAMBAMBA_MARKDUP/{}/SORTED_READ_GROUPS.bam'

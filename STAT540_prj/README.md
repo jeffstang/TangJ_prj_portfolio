@@ -36,7 +36,7 @@
 <td>Jeffrey Tang</td>
 <td>Undergraduate</td>
 <td>Genomics and molecular biology</td>
-<td><span class="citation">@jt1013</span></td>
+<td><span class="citation">@jeffstang</span></td>
 </tr>
 <tr class="even">
 <td>Nichalle Brito</td>

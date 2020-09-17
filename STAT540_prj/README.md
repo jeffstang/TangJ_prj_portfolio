@@ -34,7 +34,7 @@
 </tr>
 <tr class="odd">
 <td>Jeffrey Tang</td>
-<td>Nondegree</td>
+<td>Undergraduate</td>
 <td>Genomics and molecular biology</td>
 <td><span class="citation">@jt1013</span></td>
 </tr>
